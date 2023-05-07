@@ -5,7 +5,7 @@
 
 # Leptos Axum Starter Template
 
-This is a template for use with the [Leptos](https://github.com/leptos-rs/leptos) web framework and the [cargo-leptos](https://github.com/akesson/cargo-leptos) tool using [Axum](https://github.com/tokio-rs/axum).
+This is a template for use with the [Leptos](https://github.com/leptos-rs/leptos) web framework and the [cargo-leptos](https://github.com/akesson/cargo-leptos) tool using [Axum](https://github.com/tokio-rs/axum). Additionally, it has [Tailwind](https://tailwindcss.com/) preconfigured and is customized to my preferences.
 
 ## Creating your template repo
 
@@ -27,6 +27,17 @@ cd {projectname}
 ```
 
 to go to your newly created project.  
+
+Then run
+```bash
+yarn
+```
+or
+```bash
+npm install
+```
+to install tailwindcss.
+
 Feel free to explore the project structure, but the best place to start with your application code is in `src/app.rs`.  
 Addtionally, Cargo.toml may need updating as new versions of the dependencies are released, especially if things are not working after a `cargo update`.
 
@@ -44,7 +55,7 @@ By default, `cargo-leptos` uses `nightly` Rust, `cargo-generate`, and `sass`. If
 2. `rustup default nightly` - setup nightly as default, or you can use rust-toolchain file later on
 3. `rustup target add wasm32-unknown-unknown` - add the ability to compile Rust to WebAssembly
 4. `cargo install cargo-generate` - install `cargo-generate` binary (should be installed automatically in future)
-5. `npm install -g sass` - install `dart-sass` (should be optional in future
+5. `npm install -g sass` - install `dart-sass` (should be optional in future)
 
 ## Compiling for Release
 ```bash
@@ -73,15 +84,15 @@ After running a `cargo leptos build --release` the minimum files needed are:
 
 Copy these files to your remote server. The directory structure should be:
 ```text
-start-axum
+{{project-name}}
 site/
 ```
 Set the following enviornment variables (updating for your project as needed):
 ```text
-LEPTOS_OUTPUT_NAME="start-axum"
+LEPTOS_OUTPUT_NAME="{{project-name}}"
 LEPTOS_SITE_ROOT="site"
 LEPTOS_SITE_PKG_DIR="pkg"
-LEPTOS_SITE_ADDR="127.0.0.1:3000"
-LEPTOS_RELOAD_PORT="3001"
+LEPTOS_SITE_ADDR="127.0.0.1:8000"
+LEPTOS_RELOAD_PORT="8001"
 ```
 Finally, run the server binary.
